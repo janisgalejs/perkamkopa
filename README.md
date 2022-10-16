@@ -9,7 +9,8 @@
 * Put all files in the public folder on your server.
 * Import database file (perkamkopa.sql.gz) into your database.
 * Delete database file (perkamkopa.sql.gz) from root directory.
-* Configure your database variables in the /config/database.php file.
+* Configure database variables in the /config/database.php file.
+* Configure app variables in the /config/app.php file (disable debug).
 
 ## Comments
 
@@ -27,6 +28,11 @@ Some scenarios are not tested. For example:
 * What happens if answers or questions are deleted from database
 * Form resubmission for same question
 * ect.
+
+## TODO
+
+* Connection should be moved from BaseController to BaseModel
+* 
 
 ## Author
 
