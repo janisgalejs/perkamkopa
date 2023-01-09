@@ -11,7 +11,7 @@ const DEBUG_MODE = E_ALL;
 /**
  * Application title
  */
-const APP_TITLE = 'Pērkam Kopā tehniskais uzdevums';
+const APP_TITLE = 'Simple quiz';
 
 /**
  * Views directory path

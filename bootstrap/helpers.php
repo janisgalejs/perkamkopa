@@ -3,10 +3,10 @@
 /**
  * Generate full file path from views directory or include empty if the file not exists.
  *
- * @param $path
+ * @param string $path
  * @return string
  */
-function views_path($path = ''): string
+function views_path(string $path = ''): string
 {
     $path = VIEWS_PATH . $path . '.php';
 

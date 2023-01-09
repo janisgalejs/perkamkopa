@@ -30,6 +30,7 @@ class TestController extends BaseController
     /**
      * Handle view permissions, determine POST or GET request
      * @return array|void
+     * @throws \Exception
      */
     public function handle()
     {
@@ -130,8 +131,10 @@ class TestController extends BaseController
         }
         if (!in_array($this->userAnswer, array_column($answers, 'id'))) {
             $this->setErrorMessage('Ievadītā atbildes vērtība nav derīga!');
+
             return false;
         }
+
         return true;
     }
 }

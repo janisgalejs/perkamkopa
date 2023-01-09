@@ -24,13 +24,15 @@ class TestService
      * Check if test is in progress
      * @return bool
      */
-    public function testIsStarted()
+    public function testIsStarted(): bool
     {
         if (!$this->session->has(SESSION_KEY_USERNAME)
             || !$this->session->has(SESSION_KEY_TEST_ID)
             || !$this->session->has(SESSION_KEY_CURRENT_QUESTION_ID)) {
+
             return false;
         }
+
         return true;
     }
 
@@ -159,8 +161,6 @@ class TestService
 
     /**
      * Calculate test progress in %
-     * @param int $numberOfQuestions
-     * @param int $questionInTurn
      * @return float
      */
     public function calculateCurrentProgress()
@@ -172,6 +172,7 @@ class TestService
      * Get current question
      * @param DatabaseConnection $connection
      * @return mixed|null
+     * @throws \Exception
      */
     public function getCurrentQuestion(DatabaseConnection $connection)
     {
@@ -195,7 +196,7 @@ class TestService
      * @return bool
      * @throws \Exception
      */
-    public function testIsComplete(DatabaseConnection $connection)
+    public function testIsComplete(DatabaseConnection $connection): bool
     {
         return $this->testIsStarted() && (new User($connection))->testIsComplete($this->getUserId(), $this->getTestId());
     }

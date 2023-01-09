@@ -37,6 +37,7 @@ class HomeController extends BaseController
     /**
      * Handle view permissions, determine POST or GET request
      * @return array|array[]|false[]|void
+     * @throws \Exception
      */
     public function handle()
     {
@@ -69,7 +70,7 @@ class HomeController extends BaseController
      * Handle GET request
      * @return array[]|false[]
      */
-    public function get()
+    public function get(): array
     {
         return ['tests' => $this->tests];
     }
@@ -159,6 +160,7 @@ class HomeController extends BaseController
             $this->setErrorMessage('Ievadītā testa vērtība nav derīga!');
             return false;
         }
+
         return true;
     }
 }
